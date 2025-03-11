@@ -1,0 +1,134 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Contenedor general de productos */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estilos de cada producto */
+.product {
+    display: flex;
+    align-items: center; /* Alinear imagen y texto */
+    background: #ffffff;
+    padding: 15px;
+    margin: 15px auto;
+    width: 90%;
+    max-width: 600px; /* Reduce el tamaño del cuadro */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 15px; /* Espacio entre la imagen y el texto */
+}
+
+.product:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen del producto */
+.product img {
+    width: 120px; /* Imagen más pequeña */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+/* Información del producto */
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.product h2 {
+    margin: 0;
+    font-size: 18px; /* Letra más compacta */
+    color: #333;
+    font-weight: 600;
+}
+
+.product p {
+    font-size: 13px; /* Texto más pequeño */
+    color: #666;
+    line-height: 1.4;
+    margin: 10px 0;
+    max-width: 300px; /* Evita que el texto sea muy ancho */
+}
+
+/* Select y botón */
+.product select,
+.product button {
+    margin-top: 8px;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+    width: 160px; /* Tamaño reducido */
+    transition: all 0.3s ease-in-out;
+}
+
+.product select:hover,
+.product button:hover {
+    border-color: #4CAF50;
+    background-color: #e8f5e9;
+    cursor: pointer;
+}
+
+.product button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.product button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Estilos Responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .product {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product img {
+        width: 100px; /* Imagen más pequeña en móviles */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .product-details {
+        text-align: center;
+    }
+
+    .product p {
+        max-width: 100%;
+    }
+
+    .product select,
+    .product button {
+        width: 100%;
+    }
+}
+
